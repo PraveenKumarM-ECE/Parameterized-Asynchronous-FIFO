@@ -1,0 +1,12 @@
+VCD info: dumpfile sim/day12_async_read.vcd opened for output.
+======================================
+DAY 12 - ASYNC FIFO READ POINTER
+======================================
+--------------------------------------
+ACCEPTED READS = 46
+BLOCKED READS  = 12
+PASSED CHECKS  = 122
+FAILED CHECKS  = 0
+--------------------------------------
+DAY 12 TEST PASSED
+tb/tb_async_read_day12.sv:237: $finish called at 666000 (1ps)

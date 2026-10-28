@@ -1,0 +1,13 @@
+VCD info: dumpfile sim/day10_cdc_sync.vcd opened for output.
+======================================
+DAY 10 - CDC SYNCHRONIZER TEST
+======================================
+--------------------------------------
+DESTINATION CYCLES = 600
+SOURCE UPDATES     = 282
+RESET CHECKS       = 1
+PASSED             = 601
+FAILED             = 0
+--------------------------------------
+DAY 10 TEST PASSED
+tb/tb_cdc_day10.sv:148: $finish called at 6070000 (1ps)

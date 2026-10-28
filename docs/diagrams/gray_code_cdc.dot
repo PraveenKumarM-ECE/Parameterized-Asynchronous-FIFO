@@ -1,0 +1,62 @@
+digraph GrayCDC {
+    graph [
+        rankdir=LR,
+        bgcolor="white",
+        pad=0.4,
+        nodesep=0.5,
+        ranksep=0.9,
+        label="Gray-Code Clock Domain Crossing",
+        labelloc=t,
+        fontsize=22,
+        fontname="Arial"
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontname="Arial",
+        fontsize=12,
+        margin=0.2
+    ];
+
+    edge [
+        color="#475569",
+        fontname="Arial",
+        fontsize=10
+    ];
+
+    subgraph cluster_write {
+        label="Write Clock Domain";
+        style="rounded,filled";
+        color="#BFDBFE";
+        fillcolor="#EFF6FF";
+
+        WB [label="Binary Write Pointer", fillcolor="white"];
+        WG [label="Binary to Gray", fillcolor="white"];
+
+        WB -> WG;
+    }
+
+    subgraph cluster_read {
+        label="Read Clock Domain";
+        style="rounded,filled";
+        color="#BBF7D0";
+        fillcolor="#F0FDF4";
+
+        FF1 [label="Synchronizer FF1", fillcolor="white"];
+        FF2 [label="Synchronizer FF2", fillcolor="white"];
+        EMPTY [label="Empty Detection", fillcolor="white"];
+
+        FF1 -> FF2 -> EMPTY;
+    }
+
+    WG -> FF1 [label="Gray Pointer CDC", color="#DC2626"];
+
+    NOTE [
+        shape=note,
+        label="Gray code changes one bit per increment.\nTwo-flop synchronization reduces\nmetastability propagation risk.",
+        fillcolor="#FEF3C7"
+    ];
+
+    FF2 -> NOTE [style=dotted, arrowhead=none];
+}

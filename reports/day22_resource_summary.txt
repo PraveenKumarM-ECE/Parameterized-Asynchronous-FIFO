@@ -1,0 +1,22 @@
+======================================
+DAY 22 - HARDWARE RESOURCE SUMMARY
+======================================
+
+Top Module: async_fifo
+DATA_WIDTH: 8
+ADDR_WIDTH: 4
+FIFO DEPTH: 16
+FIFO STORAGE: 128 bits
+
+Tools:
+Verilator 5.032 2025-01-01 rev (Debian 5.032-1)
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+
+SYNTHESIS STATISTICS:
+=== async_fifo ===
+
+
+NETLIST:
+2476 sim/day22_async_fifo_netlist.v
+
+RESULT: PASS

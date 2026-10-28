@@ -1,0 +1,63 @@
+======================================
+TEST: write_fast
+WR_HALF=5 RD_HALF=10
+======================================
+VCD info: dumpfile sim/day17_async_fifo.vcd opened for output.
+======================================
+DAY 17 - CLOCK RATIO VERIFICATION
+======================================
+WRITE HALF PERIOD = 5 ns
+READ HALF PERIOD  = 10 ns
+--------------------------------------
+WRITES        = 256
+READS         = 256
+FULL HITS     = 233
+EMPTY HITS    = 3
+PASSED CHECKS = 260
+FAILED CHECKS = 0
+--------------------------------------
+DAY 17 TEST PASSED
+tb/tb_async_fifo_day17.sv:184: $finish called at 5331000 (1ps)
+======================================
+TEST: read_fast
+WR_HALF=10 RD_HALF=5
+======================================
+VCD info: dumpfile sim/day17_async_fifo.vcd opened for output.
+======================================
+DAY 17 - CLOCK RATIO VERIFICATION
+======================================
+WRITE HALF PERIOD = 10 ns
+READ HALF PERIOD  = 5 ns
+--------------------------------------
+WRITES        = 256
+READS         = 256
+FULL HITS     = 0
+EMPTY HITS    = 260
+PASSED CHECKS = 260
+FAILED CHECKS = 0
+--------------------------------------
+DAY 17 TEST PASSED
+tb/tb_async_fifo_day17.sv:184: $finish called at 5316000 (1ps)
+======================================
+TEST: different_clocks
+WR_HALF=5 RD_HALF=7
+======================================
+VCD info: dumpfile sim/day17_async_fifo.vcd opened for output.
+======================================
+DAY 17 - CLOCK RATIO VERIFICATION
+======================================
+WRITE HALF PERIOD = 5 ns
+READ HALF PERIOD  = 7 ns
+--------------------------------------
+WRITES        = 256
+READS         = 256
+FULL HITS     = 89
+EMPTY HITS    = 4
+PASSED CHECKS = 260
+FAILED CHECKS = 0
+--------------------------------------
+DAY 17 TEST PASSED
+tb/tb_async_fifo_day17.sv:184: $finish called at 3760000 (1ps)
+======================================
+ALL DAY 17 CLOCK TESTS PASSED
+======================================

@@ -1,0 +1,17 @@
+======================================
+DAY 18 - RESET AND RECOVERY
+======================================
+VCD info: dumpfile sim/day18_async_fifo.vcd opened for output.
+======================================
+DAY 18 - RESET AND RECOVERY TEST
+======================================
+--------------------------------------
+RESET CYCLES  = 6
+TOTAL WRITES  = 56
+TOTAL READS   = 32
+PASSED CHECKS = 88
+FAILED CHECKS = 0
+--------------------------------------
+DAY 18 TEST PASSED
+tb/tb_async_fifo_day18.sv:264: $finish called at 2794000 (1ps)
+DAY 18 SIMULATION COMPLETE

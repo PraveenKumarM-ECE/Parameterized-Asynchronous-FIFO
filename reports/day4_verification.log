@@ -1,0 +1,16 @@
+VCD info: dumpfile sim/day4_random_fifo.vcd opened for output.
+====================================
+DAY 4 - RANDOMIZED FIFO VERIFICATION
+====================================
+====================================
+TOTAL CYCLES      = 1000
+SUCCESSFUL WRITES = 603
+SUCCESSFUL READS  = 590
+BLOCKED WRITES    = 73
+BLOCKED READS     = 1
+SIMULTANEOUS OPS  = 396
+PASSED CHECKS     = 1591
+FAILED CHECKS     = 0
+====================================
+DAY 4 TEST PASSED
+tb/tb_fifo_day4.sv:157: $finish called at 10040000 (1ps)

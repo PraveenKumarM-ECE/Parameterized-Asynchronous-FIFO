@@ -1,0 +1,11 @@
+VCD info: dumpfile sim/day5_fifo_flags.vcd opened for output.
+======================================
+DAY 5 - FIFO FLAG AND POINTER TEST
+======================================
+======================================
+TOTAL TRANSACTIONS = 190
+PASSED CHECKS      = 482
+FAILED CHECKS      = 0
+======================================
+DAY 5 TEST PASSED
+tb/tb_fifo_day5.sv:220: $finish called at 3840000 (1ps)

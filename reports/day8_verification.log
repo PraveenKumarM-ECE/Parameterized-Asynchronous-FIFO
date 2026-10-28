@@ -1,0 +1,12 @@
+VCD info: dumpfile sim/day8_gray_conversion.vcd opened for output.
+======================================
+DAY 8 - GRAY CODE VERIFICATION
+======================================
+--------------------------------------
+WIDTH         = 5
+VALUES TESTED = 32
+PASSED        = 97
+FAILED        = 0
+--------------------------------------
+DAY 8 TEST PASSED
+tb/tb_gray_day8.sv:141: $finish called at 67000 (1ps)

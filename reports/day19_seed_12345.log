@@ -1,0 +1,17 @@
+VCD info: dumpfile sim/day19_async_fifo.vcd opened for output.
+======================================
+DAY 19 - RANDOMIZED FIFO VERIFICATION
+======================================
+RANDOM SEED = 12345
+--------------------------------------
+WRITES        = 1000
+READS         = 1000
+FULL HITS     = 672
+EMPTY HITS    = 4
+WRITE PAUSES  = 995
+READ PAUSES   = 440
+PASSED CHECKS = 1006
+FAILED CHECKS = 0
+--------------------------------------
+DAY 19 TEST PASSED
+tb/tb_async_fifo_day19.sv:219: $finish called at 20280000 (1ps)

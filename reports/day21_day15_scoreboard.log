@@ -1,0 +1,18 @@
+======================================
+DAY 15 - ADVANCED FIFO VERIFICATION
+======================================
+VCD info: dumpfile sim/day15_async_fifo.vcd opened for output.
+======================================
+DAY 15 - ADVANCED FIFO VERIFICATION
+======================================
+--------------------------------------
+TOTAL WRITES  = 256
+TOTAL READS   = 256
+FULL HITS     = 89
+EMPTY HITS    = 4
+PASSED CHECKS = 260
+FAILED CHECKS = 0
+--------------------------------------
+DAY 15 TEST PASSED
+tb/tb_async_fifo_day15.sv:184: $finish called at 3760000 (1ps)
+DAY 15 SIMULATION COMPLETE

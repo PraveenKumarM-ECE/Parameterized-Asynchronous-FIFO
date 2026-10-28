@@ -1,0 +1,23 @@
+======================================
+DAY 20 - ASSERTIONS AND COVERAGE
+======================================
+VCD info: dumpfile sim/day20_async_fifo.vcd opened for output.
+======================================
+DAY 20 - ASSERTIONS AND COVERAGE
+======================================
+--------------------------------------
+WRITES                = 128
+READS                 = 128
+FULL COVERAGE         = 9
+EMPTY COVERAGE        = 465
+OVERFLOW COVERAGE     = 4
+UNDERFLOW COVERAGE    = 4
+SIMULTANEOUS COVERAGE = 0
+WRAPAROUND COVERAGE   = 8
+RESET COVERAGE        = 1
+PASSED CHECKS         = 402
+FAILED CHECKS         = 0
+--------------------------------------
+DAY 20 TEST PASSED
+tb/tb_async_fifo_day20.sv:340: $finish called at 8871000 (1ps)
+DAY 20 SIMULATION COMPLETE

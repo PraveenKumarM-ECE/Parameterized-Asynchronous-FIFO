@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Simulation executables
+*.vvp
+*.vcd
+*.fst
+
+# Yosys generated netlists
+*_netlist.v
+
+# Build files
+obj_dir/
+build/
+
+# Editor
+.vscode/
+*.swp
+
+# Operating system
+.DS_Store
+Thumbs.db

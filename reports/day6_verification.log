@@ -1,0 +1,93 @@
+====================================
+Testing WIDTH=8 DEPTH=4
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=8 DEPTH=4
+========================================
+----------------------------------------
+WRITES          = 279
+READS           = 276
+BLOCKED WRITES  = 46
+BLOCKED READS   = 17
+PASSED CHECKS   = 1278
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=8 DEPTH=4
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=8 DEPTH=8
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=8 DEPTH=8
+========================================
+----------------------------------------
+WRITES          = 293
+READS           = 286
+BLOCKED WRITES  = 32
+BLOCKED READS   = 7
+PASSED CHECKS   = 1288
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=8 DEPTH=8
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=8 DEPTH=16
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=8 DEPTH=16
+========================================
+----------------------------------------
+WRITES          = 307
+READS           = 292
+BLOCKED WRITES  = 18
+BLOCKED READS   = 1
+PASSED CHECKS   = 1294
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=8 DEPTH=16
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=16 DEPTH=16
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=16 DEPTH=16
+========================================
+----------------------------------------
+WRITES          = 307
+READS           = 292
+BLOCKED WRITES  = 18
+BLOCKED READS   = 1
+PASSED CHECKS   = 1294
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=16 DEPTH=16
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=32 DEPTH=32
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=32 DEPTH=32
+========================================
+----------------------------------------
+WRITES          = 323
+READS           = 292
+BLOCKED WRITES  = 2
+BLOCKED READS   = 1
+PASSED CHECKS   = 1294
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=32 DEPTH=32
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+ALL DAY 6 CONFIGURATIONS PASSED
+====================================

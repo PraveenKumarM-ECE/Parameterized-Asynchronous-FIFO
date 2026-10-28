@@ -1,0 +1,6 @@
+configuration,data_width,addr_width,depth,transfers,status
+C1,8,3,8,128,PASS
+C2,8,4,16,128,PASS
+C3,8,5,32,128,PASS
+C4,16,4,16,128,PASS
+C5,32,4,16,128,PASS

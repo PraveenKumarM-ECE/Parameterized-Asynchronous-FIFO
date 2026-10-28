@@ -1,0 +1,6 @@
+configuration,data_width,addr_width,depth,storage_bits,total_cells
+C1,8,3,8,64,7
+C2,8,4,16,128,7
+C3,8,5,32,256,7
+C4,16,4,16,256,7
+C5,32,4,16,512,7

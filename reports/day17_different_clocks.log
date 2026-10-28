@@ -1,0 +1,16 @@
+VCD info: dumpfile sim/day17_async_fifo.vcd opened for output.
+======================================
+DAY 17 - CLOCK RATIO VERIFICATION
+======================================
+WRITE HALF PERIOD = 5 ns
+READ HALF PERIOD  = 7 ns
+--------------------------------------
+WRITES        = 256
+READS         = 256
+FULL HITS     = 89
+EMPTY HITS    = 4
+PASSED CHECKS = 260
+FAILED CHECKS = 0
+--------------------------------------
+DAY 17 TEST PASSED
+tb/tb_async_fifo_day17.sv:184: $finish called at 3760000 (1ps)

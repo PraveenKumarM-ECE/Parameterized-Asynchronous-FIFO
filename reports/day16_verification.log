@@ -1,0 +1,12 @@
+VCD info: dumpfile sim/day16_async_fifo.vcd opened for output.
+======================================
+DAY 16 - FIFO BOUNDARY VERIFICATION
+======================================
+--------------------------------------
+ACCEPTED WRITES = 24
+ACCEPTED READS  = 24
+PASSED CHECKS   = 36
+FAILED CHECKS   = 0
+--------------------------------------
+DAY 16 TEST PASSED
+tb/tb_async_fifo_day16.sv:213: $finish called at 1478000 (1ps)

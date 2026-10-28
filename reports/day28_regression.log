@@ -1,0 +1,108 @@
+======================================
+RUNNING C1: DW=8 AW=3 DEPTH=8
+======================================
+VCD info: dumpfile sim/day25_async_fifo.vcd opened for output.
+======================================
+DAY 25 - PARAMETERIZED FIFO TEST
+======================================
+DATA_WIDTH = 8
+ADDR_WIDTH = 3
+DEPTH      = 8
+--------------------------------------
+DATA_WIDTH    = 8
+FIFO DEPTH    = 8
+WRITES        = 128
+READS         = 128
+PASSED CHECKS = 136
+FAILED CHECKS = 0
+--------------------------------------
+DAY 25 TEST PASSED
+tb/tb_async_fifo_day25.sv:206: $finish called at 8996000 (1ps)
+[PASS] C1
+======================================
+RUNNING C2: DW=8 AW=4 DEPTH=16
+======================================
+VCD info: dumpfile sim/day25_async_fifo.vcd opened for output.
+======================================
+DAY 25 - PARAMETERIZED FIFO TEST
+======================================
+DATA_WIDTH = 8
+ADDR_WIDTH = 4
+DEPTH      = 16
+--------------------------------------
+DATA_WIDTH    = 8
+FIFO DEPTH    = 16
+WRITES        = 128
+READS         = 128
+PASSED CHECKS = 136
+FAILED CHECKS = 0
+--------------------------------------
+DAY 25 TEST PASSED
+tb/tb_async_fifo_day25.sv:206: $finish called at 8828000 (1ps)
+[PASS] C2
+======================================
+RUNNING C3: DW=8 AW=5 DEPTH=32
+======================================
+VCD info: dumpfile sim/day25_async_fifo.vcd opened for output.
+======================================
+DAY 25 - PARAMETERIZED FIFO TEST
+======================================
+DATA_WIDTH = 8
+ADDR_WIDTH = 5
+DEPTH      = 32
+--------------------------------------
+DATA_WIDTH    = 8
+FIFO DEPTH    = 32
+WRITES        = 128
+READS         = 128
+PASSED CHECKS = 136
+FAILED CHECKS = 0
+--------------------------------------
+DAY 25 TEST PASSED
+tb/tb_async_fifo_day25.sv:206: $finish called at 8478000 (1ps)
+[PASS] C3
+======================================
+RUNNING C4: DW=16 AW=4 DEPTH=16
+======================================
+VCD info: dumpfile sim/day25_async_fifo.vcd opened for output.
+======================================
+DAY 25 - PARAMETERIZED FIFO TEST
+======================================
+DATA_WIDTH = 16
+ADDR_WIDTH = 4
+DEPTH      = 16
+--------------------------------------
+DATA_WIDTH    = 16
+FIFO DEPTH    = 16
+WRITES        = 128
+READS         = 128
+PASSED CHECKS = 136
+FAILED CHECKS = 0
+--------------------------------------
+DAY 25 TEST PASSED
+tb/tb_async_fifo_day25.sv:206: $finish called at 8828000 (1ps)
+[PASS] C4
+======================================
+RUNNING C5: DW=32 AW=4 DEPTH=16
+======================================
+VCD info: dumpfile sim/day25_async_fifo.vcd opened for output.
+======================================
+DAY 25 - PARAMETERIZED FIFO TEST
+======================================
+DATA_WIDTH = 32
+ADDR_WIDTH = 4
+DEPTH      = 16
+--------------------------------------
+DATA_WIDTH    = 32
+FIFO DEPTH    = 16
+WRITES        = 128
+READS         = 128
+PASSED CHECKS = 136
+FAILED CHECKS = 0
+--------------------------------------
+DAY 25 TEST PASSED
+tb/tb_async_fifo_day25.sv:206: $finish called at 8828000 (1ps)
+[PASS] C5
+======================================
+ALL DAY 25 CONFIGURATIONS PASSED
+======================================

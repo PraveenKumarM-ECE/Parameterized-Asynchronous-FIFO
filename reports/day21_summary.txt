@@ -1,0 +1,10 @@
+[PASS] day13_integration
+[PASS] day14_cdc
+[PASS] day15_scoreboard
+[PASS] day16_boundaries
+[PASS] day17_clock_ratios
+[PASS] day18_reset
+[PASS] day19_randomized
+[PASS] day20_assertions
+[PASS] verilator_lint
+[PASS] yosys_synthesis

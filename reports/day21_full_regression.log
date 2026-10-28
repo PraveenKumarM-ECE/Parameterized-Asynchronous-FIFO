@@ -1,0 +1,48 @@
+DAY 21 - FULL ASYNC FIFO REGRESSION
+======================================
+RUNNING: day13_integration
+======================================
+[PASS] day13_integration
+======================================
+RUNNING: day14_cdc
+======================================
+[PASS] day14_cdc
+======================================
+RUNNING: day15_scoreboard
+======================================
+[PASS] day15_scoreboard
+======================================
+RUNNING: day16_boundaries
+======================================
+[PASS] day16_boundaries
+======================================
+RUNNING: day17_clock_ratios
+======================================
+[PASS] day17_clock_ratios
+======================================
+RUNNING: day18_reset
+======================================
+[PASS] day18_reset
+======================================
+RUNNING: day19_randomized
+======================================
+[PASS] day19_randomized
+======================================
+RUNNING: day20_assertions
+======================================
+[PASS] day20_assertions
+======================================
+RUNNING: verilator_lint
+======================================
+[PASS] verilator_lint
+======================================
+RUNNING: yosys_synthesis
+======================================
+[PASS] yosys_synthesis
+======================================
+DAY 21 REGRESSION SUMMARY
+======================================
+TOTAL TEST GROUPS = 10
+PASSED GROUPS     = 10
+FAILED GROUPS     = 0
+DAY 21 FULL REGRESSION PASSED

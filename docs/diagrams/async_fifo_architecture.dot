@@ -1,0 +1,58 @@
+digraph AsyncFIFO {
+    graph [
+        rankdir=LR,
+        bgcolor="white",
+        pad=0.4,
+        nodesep=0.6,
+        ranksep=1.0,
+        label="Parameterized Asynchronous FIFO Architecture",
+        labelloc=t,
+        fontsize=22,
+        fontname="Arial"
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#E8F1FF",
+        color="#2563EB",
+        fontname="Arial",
+        fontsize=12,
+        margin=0.18
+    ];
+
+    edge [
+        fontname="Arial",
+        fontsize=10,
+        color="#475569"
+    ];
+
+    WR [label="Write Interface\nwr_clk, wr_en, wr_data"];
+    WP [label="Write Pointer\nBinary + Gray\nFull Detection"];
+    MEM [label="FIFO Memory\nDATA_WIDTH x DEPTH", fillcolor="#DCFCE7"];
+    RP [label="Read Pointer\nBinary + Gray\nEmpty Detection"];
+    RD [label="Read Interface\nrd_clk, rd_en, rd_data"];
+
+    WS [label="2-FF Synchronizer\nWrite Gray to Read Domain",
+        fillcolor="#FEF3C7"];
+
+    RS [label="2-FF Synchronizer\nRead Gray to Write Domain",
+        fillcolor="#FEF3C7"];
+
+    WR -> MEM [label="Write data"];
+    WR -> WP [label="Write enable"];
+    WP -> MEM [label="Write address"];
+
+    MEM -> RD [label="Read data"];
+    RP -> MEM [label="Read address"];
+    RD -> RP [label="Read enable"];
+
+    WP -> WS [label="Write Gray"];
+    WS -> RP [label="Synchronized write pointer"];
+
+    RP -> RS [label="Read Gray"];
+    RS -> WP [label="Synchronized read pointer"];
+
+    WP -> WR [label="Full"];
+    RP -> RD [label="Empty"];
+}

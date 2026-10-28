@@ -1,0 +1,12 @@
+VCD info: dumpfile sim/day14_cdc.vcd opened for output.
+======================================
+DAY 14 - ASYNC FIFO CDC VERIFICATION
+======================================
+--------------------------------------
+WRITES        = 45
+READS         = 40
+PASSED CHECKS = 134
+FAILED CHECKS = 0
+--------------------------------------
+DAY 14 TEST PASSED
+tb/tb_async_fifo_day14.sv:242: $finish called at 2388000 (1ps)

@@ -1,0 +1,179 @@
+====================================
+RUNNING DAY 2
+====================================
+VCD info: dumpfile sim/day2_sync_fifo.vcd opened for output.
+================================
+DAY 2: PASSED=23 FAILED=0
+================================
+DAY 2 TEST PASSED
+tb/tb_sync_fifo.sv:138: $finish called at 741000 (1ps)
+DAY 2 REGRESSION PASSED
+====================================
+RUNNING DAY 3
+====================================
+VCD info: dumpfile sim/day3_fifo.vcd opened for output.
+================================
+DAY 3 - FIFO BOUNDARY TEST
+================================
+================================
+DAY 3: PASSED=223 FAILED=0
+================================
+DAY 3 TEST PASSED
+tb/tb_fifo_day3.sv:187: $finish called at 2980000 (1ps)
+DAY 3 REGRESSION PASSED
+====================================
+RUNNING DAY 4
+====================================
+VCD info: dumpfile sim/day4_random_fifo.vcd opened for output.
+====================================
+DAY 4 - RANDOMIZED FIFO VERIFICATION
+====================================
+====================================
+TOTAL CYCLES      = 1000
+SUCCESSFUL WRITES = 603
+SUCCESSFUL READS  = 590
+BLOCKED WRITES    = 73
+BLOCKED READS     = 1
+SIMULTANEOUS OPS  = 396
+PASSED CHECKS     = 1591
+FAILED CHECKS     = 0
+====================================
+DAY 4 TEST PASSED
+tb/tb_fifo_day4.sv:157: $finish called at 10040000 (1ps)
+DAY 4 REGRESSION PASSED
+====================================
+RUNNING DAY 5
+====================================
+VCD info: dumpfile sim/day5_fifo_flags.vcd opened for output.
+======================================
+DAY 5 - FIFO FLAG AND POINTER TEST
+======================================
+======================================
+TOTAL TRANSACTIONS = 190
+PASSED CHECKS      = 482
+FAILED CHECKS      = 0
+======================================
+DAY 5 TEST PASSED
+tb/tb_fifo_day5.sv:220: $finish called at 3840000 (1ps)
+DAY 5 REGRESSION PASSED
+====================================
+RUNNING DAY 6 PARAMETER TESTS
+====================================
+====================================
+Testing WIDTH=8 DEPTH=4
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=8 DEPTH=4
+========================================
+----------------------------------------
+WRITES          = 279
+READS           = 276
+BLOCKED WRITES  = 46
+BLOCKED READS   = 17
+PASSED CHECKS   = 1278
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=8 DEPTH=4
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=8 DEPTH=8
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=8 DEPTH=8
+========================================
+----------------------------------------
+WRITES          = 293
+READS           = 286
+BLOCKED WRITES  = 32
+BLOCKED READS   = 7
+PASSED CHECKS   = 1288
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=8 DEPTH=8
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=8 DEPTH=16
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=8 DEPTH=16
+========================================
+----------------------------------------
+WRITES          = 307
+READS           = 292
+BLOCKED WRITES  = 18
+BLOCKED READS   = 1
+PASSED CHECKS   = 1294
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=8 DEPTH=16
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=16 DEPTH=16
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=16 DEPTH=16
+========================================
+----------------------------------------
+WRITES          = 307
+READS           = 292
+BLOCKED WRITES  = 18
+BLOCKED READS   = 1
+PASSED CHECKS   = 1294
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=16 DEPTH=16
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+Testing WIDTH=32 DEPTH=32
+====================================
+VCD info: dumpfile sim/day6_parameterized_fifo.vcd opened for output.
+========================================
+DAY 6 - PARAMETERIZED FIFO VERIFICATION
+DATA_WIDTH=32 DEPTH=32
+========================================
+----------------------------------------
+WRITES          = 323
+READS           = 292
+BLOCKED WRITES  = 2
+BLOCKED READS   = 1
+PASSED CHECKS   = 1294
+FAILED CHECKS   = 0
+----------------------------------------
+DAY 6 TEST PASSED - WIDTH=32 DEPTH=32
+tb/tb_fifo_day6.sv:182: $finish called at 5040000 (1ps)
+====================================
+ALL DAY 6 CONFIGURATIONS PASSED
+====================================
+====================================
+RUNNING DAY 7
+====================================
+VCD info: dumpfile sim/day7_stress_fifo.vcd opened for output.
+======================================
+DAY 7 - FIFO STRESS VERIFICATION
+======================================
+======================================
+TOTAL CYCLES     = 10000
+SUCCESSFUL WRITES= 4881
+SUCCESSFUL READS = 4868
+BLOCKED WRITES   = 1289
+BLOCKED READS    = 1241
+SIMULTANEOUS OPS = 3444
+FULL HITS        = 2223
+EMPTY HITS       = 1483
+PASSED CHECKS    = 14869
+FAILED CHECKS    = 0
+======================================
+DAY 7 TEST PASSED
+tb/tb_fifo_day7.sv:189: $finish called at 100040000 (1ps)
+DAY 7 REGRESSION PASSED
+====================================
+ALL WEEK 1 REGRESSION TESTS PASSED
+====================================

@@ -1,0 +1,876 @@
+
+-- Running command `
+        read_verilog -sv rtl/async_fifo_memory.sv rtl/async_fifo_write_ptr.sv rtl/async_fifo_read_ptr.sv rtl/cdc_sync.sv rtl/async_fifo.sv
+        chparam -set DATA_WIDTH 32 -set ADDR_WIDTH 4 async_fifo
+        hierarchy -check -top async_fifo
+        proc
+        opt
+        memory
+        opt
+        techmap
+        opt
+        check -assert
+        stat
+        write_verilog -noattr -noexpr sim/day23_C5_netlist.v
+    ' --
+
+1. Executing Verilog-2005 frontend: rtl/async_fifo_memory.sv
+Parsing SystemVerilog input from `rtl/async_fifo_memory.sv' to AST representation.
+Generating RTLIL representation for module `\async_fifo_memory'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/async_fifo_write_ptr.sv
+Parsing SystemVerilog input from `rtl/async_fifo_write_ptr.sv' to AST representation.
+Generating RTLIL representation for module `\async_fifo_write_ptr'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: rtl/async_fifo_read_ptr.sv
+Parsing SystemVerilog input from `rtl/async_fifo_read_ptr.sv' to AST representation.
+Generating RTLIL representation for module `\async_fifo_read_ptr'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: rtl/cdc_sync.sv
+Parsing SystemVerilog input from `rtl/cdc_sync.sv' to AST representation.
+Generating RTLIL representation for module `\cdc_sync'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: rtl/async_fifo.sv
+Parsing SystemVerilog input from `rtl/async_fifo.sv' to AST representation.
+Generating RTLIL representation for module `\async_fifo'.
+Successfully finished Verilog frontend.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 4
+
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 4
+Generating RTLIL representation for module `$paramod$8340c8cf400b5dbb69016e6f0ecaa776657c566e\async_fifo'.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     \async_fifo_write_ptr
+Used module:     \async_fifo_read_ptr
+Used module:     \cdc_sync
+Used module:     \async_fifo_memory
+Parameter \ADDR_WIDTH = 4
+
+7.2. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo_write_ptr'.
+Parameter \ADDR_WIDTH = 4
+Generating RTLIL representation for module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Parameter \ADDR_WIDTH = 4
+
+7.3. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo_read_ptr'.
+Parameter \ADDR_WIDTH = 4
+Generating RTLIL representation for module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Parameter \WIDTH = 5
+
+7.4. Executing AST frontend in derive mode using pre-parsed AST for module `\cdc_sync'.
+Parameter \WIDTH = 5
+Generating RTLIL representation for module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Parameter \WIDTH = 5
+Found cached RTLIL representation for module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 4
+
+7.5. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo_memory'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 4
+Generating RTLIL representation for module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+
+7.6. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100
+Used module:     $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100
+Used module:     $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101
+Used module:     $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory
+
+7.7. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100
+Used module:     $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100
+Used module:     $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101
+Used module:     $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory
+Removing unused module `\cdc_sync'.
+Removing unused module `\async_fifo_read_ptr'.
+Removing unused module `\async_fifo_write_ptr'.
+Removing unused module `\async_fifo_memory'.
+Removed 4 unused modules.
+
+8. Executing PROC pass (convert processes to netlists).
+
+8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo_memory.sv:18$53 in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Marked 1 switch rules as full_case in process $proc$rtl/cdc_sync.sv:16$50 in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo_read_ptr.sv:31$47 in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Marked 1 switch rules as full_case in process $proc$rtl/async_fifo_write_ptr.sv:36$39 in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Removed a total of 0 dead cases.
+
+8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 3 assignments to connections.
+
+8.4. Executing PROC_INIT pass (extract init attributes).
+
+8.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \dst_rst_n in `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.$proc$rtl/cdc_sync.sv:16$50'.
+Found async reset \rd_rst_n in `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_read_ptr.sv:31$47'.
+Found async reset \wr_rst_n in `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_write_ptr.sv:36$39'.
+
+8.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~1 debug messages>
+
+8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$proc$rtl/async_fifo_memory.sv:18$53'.
+     1/3: $1$memwr$\mem$rtl/async_fifo_memory.sv:20$52_EN[31:0]$59
+     2/3: $1$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$58
+     3/3: $1$memwr$\mem$rtl/async_fifo_memory.sv:20$52_ADDR[3:0]$57
+Creating decoders for process `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.$proc$rtl/cdc_sync.sv:16$50'.
+     1/2: $0\sync_stage2[4:0]
+     2/2: $0\sync_stage1[4:0]
+Creating decoders for process `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_read_ptr.sv:31$47'.
+     1/3: $0\empty[0:0]
+     2/3: $0\rd_gray[4:0]
+     3/3: $0\rd_binary[4:0]
+Creating decoders for process `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_write_ptr.sv:36$39'.
+     1/3: $0\full[0:0]
+     2/3: $0\wr_gray[4:0]
+     3/3: $0\wr_binary[4:0]
+
+8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+8.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$memwr$\mem$rtl/async_fifo_memory.sv:20$52_ADDR' using process `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$proc$rtl/async_fifo_memory.sv:18$53'.
+  created $dff cell `$procdff$70' with positive edge clock.
+Creating register for signal `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA' using process `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$proc$rtl/async_fifo_memory.sv:18$53'.
+  created $dff cell `$procdff$71' with positive edge clock.
+Creating register for signal `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$memwr$\mem$rtl/async_fifo_memory.sv:20$52_EN' using process `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$proc$rtl/async_fifo_memory.sv:18$53'.
+  created $dff cell `$procdff$72' with positive edge clock.
+Creating register for signal `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.\sync_stage1' using process `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.$proc$rtl/cdc_sync.sv:16$50'.
+  created $adff cell `$procdff$77' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.\sync_stage2' using process `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.$proc$rtl/cdc_sync.sv:16$50'.
+  created $adff cell `$procdff$82' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.\rd_binary' using process `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_read_ptr.sv:31$47'.
+  created $adff cell `$procdff$87' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.\rd_gray' using process `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_read_ptr.sv:31$47'.
+  created $adff cell `$procdff$92' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.\empty' using process `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_read_ptr.sv:31$47'.
+  created $adff cell `$procdff$97' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.\wr_binary' using process `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_write_ptr.sv:36$39'.
+  created $adff cell `$procdff$102' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.\wr_gray' using process `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_write_ptr.sv:36$39'.
+  created $adff cell `$procdff$107' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.\full' using process `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_write_ptr.sv:36$39'.
+  created $adff cell `$procdff$112' with positive edge clock and positive level reset.
+
+8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$proc$rtl/async_fifo_memory.sv:18$53'.
+Removing empty process `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.$proc$rtl/async_fifo_memory.sv:18$53'.
+Removing empty process `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.$proc$rtl/cdc_sync.sv:16$50'.
+Removing empty process `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_read_ptr.sv:31$47'.
+Removing empty process `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.$proc$rtl/async_fifo_write_ptr.sv:36$39'.
+Cleaned up 1 empty switch.
+
+8.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+<suppressed ~4 debug messages>
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+<suppressed ~7 debug messages>
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+<suppressed ~7 debug messages>
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+<suppressed ~6 debug messages>
+Removed a total of 5 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+    Consolidated identical input bits for $mux cell $procmux$62:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$62_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$62_Y [0]
+      New connections: $procmux$62_Y [31:1] = { $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] $procmux$62_Y [0] }
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Performed a total of 1 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Removed 9 unused cells and 50 unused wires.
+<suppressed ~14 debug messages>
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+
+9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+9.16. Finished OPT passes. (There is nothing left to do.)
+
+10. Executing MEMORY pass.
+
+10.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+10.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+10.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.mem write port 0.
+
+10.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+10.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\mem'[0] in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory': no output FF found.
+Checking read port address `\mem'[0] in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory': no address FF found.
+
+10.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+
+10.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+10.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+10.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+
+10.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+10.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \mem in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory:
+  created 16 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 16 write mux blocks.
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+<suppressed ~8 debug messages>
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 36 unused wires.
+<suppressed ~1 debug messages>
+
+11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+11.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\mem[9]$134 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[9]).
+Adding EN signal on $memory\mem[8]$132 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[8]).
+Adding EN signal on $memory\mem[7]$130 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[7]).
+Adding EN signal on $memory\mem[6]$128 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[6]).
+Adding EN signal on $memory\mem[5]$126 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[5]).
+Adding EN signal on $memory\mem[4]$124 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[4]).
+Adding EN signal on $memory\mem[3]$122 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[3]).
+Adding EN signal on $memory\mem[2]$120 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[2]).
+Adding EN signal on $memory\mem[1]$118 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[1]).
+Adding EN signal on $memory\mem[15]$146 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[15]).
+Adding EN signal on $memory\mem[14]$144 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[14]).
+Adding EN signal on $memory\mem[13]$142 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[13]).
+Adding EN signal on $memory\mem[12]$140 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[12]).
+Adding EN signal on $memory\mem[11]$138 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[11]).
+Adding EN signal on $memory\mem[10]$136 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[10]).
+Adding EN signal on $memory\mem[0]$116 ($dff) from module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory (D = $0$memwr$\mem$rtl/async_fifo_memory.sv:20$52_DATA[31:0]$55, Q = \mem[0]).
+
+11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+Removed 16 unused cells and 16 unused wires.
+<suppressed ~17 debug messages>
+
+11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+11.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+11.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+11.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+11.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+11.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+
+11.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+11.23. Finished OPT passes. (There is nothing left to do.)
+
+12. Executing TECHMAP pass (map to technology primitives).
+
+12.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+12.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $adff.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=5:Y_WIDTH=5:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=5:Y_WIDTH=5:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=5:Y_WIDTH=5:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $dffe.
+No more expansions possible.
+<suppressed ~362 debug messages>
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+<suppressed ~1 debug messages>
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+<suppressed ~28 debug messages>
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+<suppressed ~28 debug messages>
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 2 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+Removed 4 unused cells and 75 unused wires.
+<suppressed ~7 debug messages>
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+  Optimizing cells in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+  Optimizing cells in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Finding identical cells in module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory..
+Finding unused cells or wires in module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101..
+Finding unused cells or wires in module \async_fifo..
+
+13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory.
+Optimizing module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100.
+Optimizing module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101.
+Optimizing module async_fifo.
+
+13.16. Finished OPT passes. (There is nothing left to do.)
+
+14. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory...
+Checking module $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100...
+Checking module $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100...
+Checking module $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101...
+Checking module async_fifo...
+Found and reported 0 problems.
+
+15. Printing statistics.
+
+=== $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory ===
+
+   Number of wires:                 82
+   Number of wire bits:           1114
+   Number of public wires:          22
+   Number of public wire bits:     586
+   Number of ports:                  6
+   Number of port bits:             74
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1072
+     $_AND_                         40
+     $_DFFE_PP_                    512
+     $_MUX_                        516
+     $_NOT_                          4
+
+=== $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                 19
+   Number of wire bits:             51
+   Number of public wires:          11
+   Number of public wire bits:      34
+   Number of ports:                  8
+   Number of port bits:             23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 36
+     $_AND_                          6
+     $_DFF_PN0_                      9
+     $_DFF_PN1_                      1
+     $_NOT_                          2
+     $_OR_                           4
+     $_XOR_                         14
+
+=== $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                 20
+   Number of wire bits:             56
+   Number of public wires:          12
+   Number of public wire bits:      39
+   Number of ports:                  8
+   Number of port bits:             23
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     $_AND_                          6
+     $_DFF_PN0_                     10
+     $_NOT_                          4
+     $_OR_                           4
+     $_XOR_                         14
+
+=== $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101 ===
+
+   Number of wires:                  6
+   Number of wire bits:             22
+   Number of public wires:           6
+   Number of public wire bits:      22
+   Number of ports:                  4
+   Number of port bits:             12
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 10
+     $_DFF_PN0_                     10
+
+=== async_fifo ===
+
+   Number of wires:                 20
+   Number of wire bits:            112
+   Number of public wires:          19
+   Number of public wire bits:     111
+   Number of ports:                 10
+   Number of port bits:             72
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $_AND_                          1
+     $_NOT_                          1
+     $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory      1
+     $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100      1
+     $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100      1
+     $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101      2
+
+=== design hierarchy ===
+
+   async_fifo                        1
+     $paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory      1
+     $paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100      1
+     $paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100      1
+     $paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101      2
+
+   Number of wires:                153
+   Number of wire bits:           1377
+   Number of public wires:          76
+   Number of public wire bits:     814
+   Number of ports:                 40
+   Number of port bits:            216
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1168
+     $_AND_                         53
+     $_DFFE_PP_                    512
+     $_DFF_PN0_                     39
+     $_DFF_PN1_                      1
+     $_MUX_                        516
+     $_NOT_                         11
+     $_OR_                           8
+     $_XOR_                         28
+
+16. Executing Verilog backend.
+Dumping module `$paramod$20e56080ec181dbbbeb5e96c6443f519667f1b2d\async_fifo_memory'.
+Dumping module `$paramod\async_fifo_read_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Dumping module `$paramod\async_fifo_write_ptr\ADDR_WIDTH=s32'00000000000000000000000000000100'.
+Dumping module `$paramod\cdc_sync\WIDTH=s32'00000000000000000000000000000101'.
+Dumping module `\async_fifo'.

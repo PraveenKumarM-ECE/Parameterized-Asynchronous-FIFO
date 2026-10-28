@@ -1,0 +1,55 @@
+digraph FIFOFlow {
+    graph [
+        rankdir=TB,
+        bgcolor="white",
+        pad=0.4,
+        nodesep=0.4,
+        ranksep=0.6,
+        label="Asynchronous FIFO Operation Flow",
+        labelloc=t,
+        fontsize=22,
+        fontname="Arial"
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#E8F1FF",
+        color="#2563EB",
+        fontname="Arial",
+        fontsize=12
+    ];
+
+    edge [fontname="Arial", fontsize=10];
+
+    START [label="Start / Reset", shape=oval];
+    INIT [label="Initialize pointers and flags"];
+    SELECT [label="Write or Read Request?", shape=diamond];
+
+    FULL [label="FIFO Full?", shape=diamond];
+    WRITE [label="Store data\nIncrement write pointer\nUpdate Gray pointer"];
+    BLOCKW [label="Block write"];
+
+    EMPTY [label="FIFO Empty?", shape=diamond];
+    READ [label="Read data\nIncrement read pointer\nUpdate Gray pointer"];
+    BLOCKR [label="Block read"];
+
+    SYNC [label="Synchronize Gray pointers\nUpdate full / empty flags"];
+
+    START -> INIT -> SELECT;
+
+    SELECT -> FULL [label="Write"];
+    SELECT -> EMPTY [label="Read"];
+
+    FULL -> BLOCKW [label="Yes"];
+    FULL -> WRITE [label="No"];
+
+    EMPTY -> BLOCKR [label="Yes"];
+    EMPTY -> READ [label="No"];
+
+    WRITE -> SYNC;
+    READ -> SYNC;
+    BLOCKW -> SELECT;
+    BLOCKR -> SELECT;
+    SYNC -> SELECT;
+}

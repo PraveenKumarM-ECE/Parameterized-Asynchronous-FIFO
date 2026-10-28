@@ -1,0 +1,13 @@
+VCD info: dumpfile sim/day9_gray_pointer.vcd opened for output.
+======================================
+DAY 9 - GRAY POINTER VERIFICATION
+======================================
+--------------------------------------
+INCREMENTS  = 335
+STALLS      = 97
+TRANSITIONS = 335
+PASSED      = 866
+FAILED      = 0
+--------------------------------------
+DAY 9 TEST PASSED
+tb/tb_gray_pointer_day9.sv:164: $finish called at 4366000 (1ps)

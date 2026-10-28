@@ -1,0 +1,12 @@
+VCD info: dumpfile sim/day13_async_fifo.vcd opened for output.
+======================================
+DAY 13 - ASYNC FIFO INTEGRATION
+======================================
+--------------------------------------
+WRITES        = 32
+READS         = 32
+PASSED CHECKS = 38
+FAILED CHECKS = 0
+--------------------------------------
+DAY 13 TEST PASSED
+tb/tb_async_fifo_day13.sv:191: $finish called at 1772000 (1ps)
